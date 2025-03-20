@@ -15,7 +15,7 @@ include "koneksi.php"
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
-    <body class="bg-primary">
+    <body class="bg-primary">    
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
@@ -36,6 +36,21 @@ include "koneksi.php"
 
                                             $data = mysqli_query($koneksi, "SELECT * FROM user WHERE email='$email' and password='$password'");
                                             $cek = mysqli_num_rows($data);
+                                            // $sql = "SELECT * FROM user WHERE email='$email'";
+                                            // $result = $conn->query($sql);
+
+                                            // if ($result->num_rows > 0) {
+                                            //     $row = $result->fetch_assoc();
+                                            //     if (password_verify($password, $row['password'])) {
+                                            //         $_SESSION['user_id'] = $row['id'];
+                                            //         $_SESSION['level'] = $row['level'];
+                                            //         echo "Login berhasil!";
+                                            //     } else {
+                                            //         echo "Password salah!";
+                                            //     }
+                                            // } else {
+                                            //     echo "Email tidak ditemukan!";
+                                            // }
                                             if ($cek > 0){
                                                 $_SESSION['user'] = mysqli_fetch_array($data);
                                                 echo '<script>alert("Selamat datang, login berhasil!");
@@ -56,7 +71,7 @@ include "koneksi.php"
                                                 <label for="inputPassword">Password</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="btn btn-danger" href="register.php">Register</a>
+                                                <a class="btn btn-danger" href="registrasi.php">Register</a>
                                                 <button class="btn btn-primary" type="submit" name="login">Login</button>
                                             </div>
                                         </form>

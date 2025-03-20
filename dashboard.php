@@ -80,9 +80,14 @@ if (!isset($_SESSION['user'])){
                                     <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                     Pengembalian
                             </a>
+                            
                             <a class="nav-link" href="?page=kategori">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Kategori
+                            </a>
+                            <a class="nav-link" href="?page=user">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                    User
                             </a>
                         
                             <?php endif; ?>

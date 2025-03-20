@@ -608,8 +608,8 @@
                     <div class="col-12 col-md-6">
                         <!-- Copyright -->
                         <div class="text-md-right">
-                            &copy; 2018.<br>
-                            <span>Theme by</span> <a href="https://themesfor.app" class="text-white">Themes For App</a> | <span>Images From</span> <a href="http://unsplash.com" class="text-white">Unsplash</a>.
+                            &copy; 2025.<br>
+                            <span>Ryawati Kari</span> <a href="https://themesfor.app" class="text-white">Themes For App</a> | <span>Images From</span> <a href="http://unsplash.com" class="text-white">Unsplash</a>.
                         </div>
                         <!--/ End Copyright -->
                     </div>
