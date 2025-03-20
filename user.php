@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-12">
             <a href="?page=user_tambah" class="btn btn-primary mb-2"> + Tambah Data</a>
-                <table class="table table-hover table-sm mt-3 w-100" id="dataTable" cellspacing="0">
+                <table class="table table-bordered table-hover table-sm mt-3 w-100" id="dataTable" cellspacing="0">
                        
                     <thead class="mb-3 bg-info text-center text-white">
                             <th>No</th>
@@ -13,7 +13,7 @@
                             <th>Email</th>
                             <th>Password</th>
                             <th>Alamat</th>
-                            <th>No_Telpon</th>
+                            <th>No Telpon</th>
                             <th>Aksi</th>
                     </thead>
                     <?php 
