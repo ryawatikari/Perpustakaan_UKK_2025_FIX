@@ -1,5 +1,5 @@
 <h1 class="mt-4">Kategori Buku</h1>
-<div class="card shadow w-50">
+<div class="card shadows w-75ss">
     <div class="card-body">
         <div class="row">
             <div class="col-md-12">

@@ -103,7 +103,7 @@ if (!isset($_SESSION['user'])){
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
-                        <?php echo $_SESSION['user']['nama']; ?>
+                        <?php echo $_SESSION['user']['username']; ?>
                     </div>
                 </nav>
             </div>

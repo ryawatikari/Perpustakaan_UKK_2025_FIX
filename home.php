@@ -63,7 +63,7 @@
                                     <tr>
                                         <td width="200">Nama</td>
                                         <td width="1">:</td>
-                                        <td><?= $_SESSION['user']['nama']; ?></td>
+                                        <td><?= $_SESSION['user']['username']; ?></td>
                                     </tr>
                                     <tr>
                                         <td width="200">Level User</td>

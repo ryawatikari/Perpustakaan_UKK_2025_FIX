@@ -13,8 +13,9 @@
                         $password = $_POST['password'];
                         $alamat = $_POST['alamat'];
                         $no_telpon = $_POST['no_telpon'];
+                        $level = $_POST['level'];
 
-                        $query = mysqli_query($koneksi, "UPDATE user SET username='$username', email='$email', password='$password', alamat='$alamat', no_telpon='$no_telpon' WHERE id_user=$id");
+                        $query = mysqli_query($koneksi, "UPDATE user SET username='$username', email='$email', password='$password', alamat='$alamat', no_telpon='$no_telpon', level='$level' WHERE id_user=$id");
 
                         if ($query){
                             echo '<script>alert("Ubah data berhasil"); 
@@ -57,6 +58,17 @@
                     <div class="col-md-2">No Telpon</div>
                         <div class="col-md-8">
                             <input type="text" class="form-control" name="no_telpon" value="<?= $data ['no_telpon']; ?>">
+                        </div>
+                    </div>
+                <div class="row mb-3">
+                        <div class="col-md-2">Level</div>
+                        <div class="col-md-8">
+                            <select class="form-control" name="level" required>
+                                <option value="">-- Pilih Level --</option>
+                                <!-- Level user yang sudah ada di database ditampilkan sebagai pilihan yang terpilih (selected). -->
+                                <option value="admin" <?php if($data['level'] == 'admin') echo 'selected'; ?>>Admin</option>
+                                <option value="peminjam" <?php if($data['level'] == 'peminjam') echo 'selected'; ?>>Peminjam</option>
+                            </select>
                         </div>
                     </div>
 

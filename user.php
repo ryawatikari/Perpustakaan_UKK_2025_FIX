@@ -23,7 +23,7 @@
                         while($data = mysqli_fetch_array($query)){
                             ?>
                          <tbody>
-                     
+                            <!-- belum tambahkan level user -->
                                 <td class="text-center"><?php echo $i++; ?></td>
                                 <td><?php echo $data['username']; ?></td>
                                 <td><?php echo $data['email']; ?></td>
