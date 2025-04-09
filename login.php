@@ -12,6 +12,8 @@ include "koneksi.php"
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Login</title>
+         <!-- Favicon -->
+        <link rel="icon" type="image/png" href="assets/images/favicon.png">
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
