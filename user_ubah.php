@@ -30,7 +30,11 @@
                         </div>
                     </div>
 
+<<<<<<< Updated upstream
                 <!-- <div class="row mb-3">
+=======
+                <div class="row mb-3">
+>>>>>>> Stashed changes
                         <div class="col-md-2">Level</div>
                         <div class="col-md-8">
                             <select class="form-control" name="level" required>

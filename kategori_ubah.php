@@ -7,8 +7,13 @@
                  $id = $_GET['id'];
                     if(isset ($_POST['submit'])){
                         $kategori = $_POST['kategori'];
-                        $query = mysqli_query($koneksi, "UPDATE kategori set kategori='$kategori' WHERE id_kategori=$id");
+                        $cek = mysqli_query($koneksi, "SELECT * FROM kategori WHERE LOWER(kategori) = LOWER('$kategori') AND id_kategori != $id");
+                        $check = mysqli_num_rows($cek);
 
+                       if ($check > 0){
+                        echo "Data yang dimasukkan sama";
+                       } else{
+                        $query = mysqli_query($koneksi, "UPDATE kategori set kategori='$kategori' WHERE id_kategori=$id");
                         if ($query){
                             echo '<script>alert("Ubah data berhasil"); 
                              location.href = "dashboard.php?page=kategori";
@@ -17,6 +22,7 @@
                         }else{
                             echo '<script>alert("Ubah data gagal"); </script>';
                         }
+                       }
                     }
                    
                     $query = mysqli_query($koneksi, "SELECT*FROM kategori where id_kategori=$id");

@@ -3,38 +3,56 @@
 include "koneksi.php"
 ?>
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Login</title>
-         <!-- Favicon -->
-        <link rel="icon" type="image/png" href="assets/images/favicon.png">
-        <link href="css/styles.css" rel="stylesheet" />
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    </head>
-    <body class="bg-primary">    
-        <div id="layoutAuthentication">
-            <div id="layoutAuthentication_content">
-                <main>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-5">
-                                <div class="card shadow-lg border-0 rounded-lg mt-5 w-100 h-100">
-                                    <div class="card-header d-flex justify-content-center">
-                                        <!-- <h3 class="text-center font-weight-light my-4">Login</h3> -->
-                                        <img src="assets/images/logomak.png" alt="" class="w-50">
-                                    </div>
-                                    <div class="card-body mt-3">
-                                        <h3 class="text-center fw-5 mb-3">Login</h3>
-                                    <?php
+  <head>
+  	<title>Login </title>
+    <meta charset="utf-8">
+     <!-- Favicon -->
+     <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="css/style.css">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Login</h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-12 col-lg-10">
+					<div class="wrap d-md-flex">
+						<div class="text-wrap p-4 p-lg-5 text-center d-flex align-items-center order-md-last">
+							<div class="text w-100">
+								<h2>Halo, Sobat Buku!</h2>
+								<p>Masuk ke perpustakaan digitalmu. Belum punya akun? Yuk, daftar!</p>
+								<a href="registrasi.php" class="btn btn-white btn-outline-white">Registrasi</a>
+							</div>
+			      </div>
+						<div class="login-wrap p-4 p-lg-5">
+			      	<div class="d-flex">
+			      		<div class="w-100">
+			      			<h3 class="mb-4">Sign In</h3>
+			      		</div>
+								<div class="w-100">
+									<p class="social-media d-flex justify-content-end">
+										<a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a>
+										<a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a>
+									</p>
+								</div>
+			      	</div>
+					  <?php
                                         if (isset($_POST['login'])){
-                                            $email = $_POST["email"];
-                                            $password = md5($_POST["password"]);
+											$email = $_POST['email'];
+											$password = md5($_POST['password']); // Enkripsi password
 
                                             $data = mysqli_query($koneksi, "SELECT * FROM user WHERE email='$email' and password='$password'");
                                             $cek = mysqli_num_rows($data);
@@ -63,50 +81,42 @@ include "koneksi.php"
                                         }
                                         
                                         ?>
-                                        <form method="POST">
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="text" placeholder="email" name="email"/>
-                                                <label for="inputEmail">Email</label>
-                                            </div>
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputPassword" type="password" placeholder="Password" name="password"/>
-                                                <label for="inputPassword">Password</label>
-                                            </div>
-                                            <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="btn btn-danger" href="registrasi.php">Register</a>
-                                                <button class="btn btn-primary" type="submit" name="login">Login</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </main>
-            </div>
-            <div id="layoutAuthentication_footer">
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2023</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-            </div>
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
-    </body>
+							<form method="POST" class="signin-form">
+								<div class="form-group mb-3">
+										<label class="label">Email</label>
+										<input type="text" class="form-control" name="email" placeholder="Email" required>
+								</div>
+								<div class="form-group mb-3">
+									<label class="label">Password</label>
+								<input type="password" class="form-control" name="password" placeholder="Password" required>
+								</div>
+								<div class="form-group">
+									<button type="submit" class="form-control btn btn-primary submit px-3" name="login">Login</button>
+								</div>
+								<div class="form-group d-md-flex">
+									<div class="w-50 text-left">
+										<label class="checkbox-wrap checkbox-primary mb-0">Remember Me
+												<input type="checkbox" checked>
+												<span class="checkmark"></span>
+													</label>
+												</div>
+												<div class="w-50 text-md-right">
+													<a href="#">Forgot Password</a>
+												</div>
+								</div>
+							</form>
+		        		</div>
+		     		</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+
+	</body>
 </html>
 
-<style setup>
-    /* .card{
-        background-image: url(assets/images/logomak.png);
-
-    } */
-</style>

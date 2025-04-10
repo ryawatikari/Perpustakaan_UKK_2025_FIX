@@ -11,7 +11,6 @@
                             <th>No</th>
                             <th>Nama Lengkap</th>
                             <th>Email</th>
-                            <th>Password</th>
                             <th>Alamat</th>
                             <th>No Telpon</th>
                             <th>Aksi</th>
@@ -27,7 +26,6 @@
                                 <td class="text-center"><?php echo $i++; ?></td>
                                 <td><?php echo $data['username']; ?></td>
                                 <td><?php echo $data['email']; ?></td>
-                                <td><input type="password" value="<?php echo $data['password']; ?>" readonly class="form-control-plaintext border-0 bg-transparent" style="pointer-events: none;"></td>
                                 <td><?php echo $data['alamat']; ?></td>
                                 <td><?php echo $data['no_telpon']; ?></td>
                                 <td>

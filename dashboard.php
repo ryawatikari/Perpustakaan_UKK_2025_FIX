@@ -17,6 +17,8 @@ if (!isset($_SESSION['user'])){
         <title>Dashboard</title>
          <!-- Favicon -->
         <link rel="icon" type="image/png" href="assets/images/favicon.png">
+        <!-- Link CSS DataTables -->
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -143,6 +145,17 @@ if (!isset($_SESSION['user'])){
         <script src="assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
+        <!-- jQuery + DataTables JS -->
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+            $('#myTable').DataTable({
+                "pageLength": 3 // jumlah baris per halaman agar tombol "Next" muncul
+            });
+            });
+        </script>
     </body>
 </html>
 

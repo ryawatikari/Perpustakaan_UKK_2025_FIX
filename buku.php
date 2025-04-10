@@ -31,20 +31,9 @@
                 <?php endif; ?>
 
                 <div class="table-responsive">
-                    <table class="table table-bordered mt-3 bg-white shadow" id="dataTable" width="100%" cellspacing="0">
-                        <colgroup>
-                            <col style="width: 2%;" />
-                            <col style="width: 7%;" />
-                            <col style="width: 10%;" />
-                            <col style="width: 20%;" />
-                            <col style="width: 7%;" />
-                            <col style="width: 10%;" />
-                            <col style="width: 10%;" />
-                            <col style="width: 7%;" />
-                            <col style="width: 25%;" />
-                            <col style="width: 15%;" />
-                        </colgroup>
-                        <thead class="bg-info text-white text-center">
+                    <table id="myTable" class="table table-striped table-bordered bg-light">
+                        
+                        <thead class="bg-info text-light text-center">
                             <tr>
                                 <th>No</th>
                                 <th>Kategori</th>
@@ -58,7 +47,7 @@
                                 <th>Aksi</th>
                             </tr>
                         </thead>
-                        <tbody class="text-start">
+                        <tbody class="text-start bg-info-subtle">
                             <?php
                             $i = 1;
                             $nama = $_GET['nama'] ?? '';
@@ -146,14 +135,11 @@ document.addEventListener('DOMContentLoaded', function () {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <style>
-    .card {
+    /* .card {
         background-color: #ffffff;
-    }
-
-    tbody tr:hover {
-        background-color: #dfe6e9;
-        color: #000;
-        transition: background-color 0.3s ease-in-out;
+    } */
+    .display{
+        border: 1px solid #dfe6e9;
     }
 
     .btn-warning:hover {

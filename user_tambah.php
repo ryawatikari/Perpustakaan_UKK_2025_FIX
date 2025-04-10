@@ -10,7 +10,7 @@
                         $nama = $_POST['nama'];
                         $username = $_POST['username'];
                         $email = $_POST['email'];
-                        $password = $_POST['password']; // Enkripsi password
+                        $password = md5($_POST['password']); // Enkripsi password
                         $alamat = $_POST['alamat'];
                         $no_telpon = $_POST['no_telpon'];
                         $level = $_POST['level'];
