@@ -9,8 +9,7 @@
                     if(isset ($_POST['submit'])){
                         $username = $_POST['username'];
                         $email = $_POST['email'];
-                        $password = $_POST['password'];
-                        $hashed_password = password_hash($password, PASSWORD_DEFAULT);// Enkripsi password
+                        $password = $_POST['password']; // Enkripsi password
                         $alamat = $_POST['alamat'];
                         $no_telpon = $_POST['no_telpon'];
                         $level = $_POST['level'];
