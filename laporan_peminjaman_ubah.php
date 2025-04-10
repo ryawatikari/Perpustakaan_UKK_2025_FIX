@@ -1,4 +1,4 @@
-<h1 class="mt-4">Ulasan Buku</h1>
+<h1 class="mt-4">Ubah data Peminjaman Buku</h1>
 <div class="card text-bg-light">
     <div class="card-body">
         <div class="row">
@@ -6,12 +6,10 @@
                 <?php
                     $id = $_GET['id'];
                     if(isset ($_POST['submit'])){
-                        $id_buku = $_POST['id_buku'];
                         $id_user = $_SESSION['user']['id_user'];
-                        $tanggal_peminjaman = $_POST['tanggal_peminjaman'];
                         $tanggal_pengembalian = $_POST['tanggal_pengembalian'];
                         $status_peminjaman = $_POST['status_peminjaman'];
-                        $query = mysqli_query($koneksi, "UPDATE peminjaman set id_buku='$id_buku', id_user='$id_user', tanggal_peminjaman='$tanggal_peminjaman', tanggal_pengembalian='$tanggal_pengembalian', status_peminjaman='$status_peminjaman' WHERE id_peminjaman=$id");
+                        $query = mysqli_query($koneksi, "UPDATE peminjaman set id_user='$id_user', tanggal_pengembalian='$tanggal_pengembalian', status_peminjaman='$status_peminjaman' WHERE id_peminjaman=$id");
 
                         if ($query){
                             echo '<script>alert("Ubah data berhasil");
@@ -25,7 +23,7 @@
                     $query = mysqli_query($koneksi, "SELECT*FROM peminjaman WHERE id_peminjaman=$id");
                     $data = mysqli_fetch_array ($query);
                 ?>
-                <div class="row mb-3">
+                <!-- <div class="row mb-3">
                         <div class="col-md-2">Buku</div>
                         <div class="col-md-8">
                             <select name="id_buku" class="form-control">
@@ -41,13 +39,7 @@
                                 ?>  
                             </select>
                         </div>
-                    </div>
-                <div class="row mb-3">
-                        <div class="col-md-2">Tanggal Peminjaman</div>
-                        <div class="col-md-8">
-                           <input type="date" class="form-control" value="<?=  $data['tanggal_peminjaman']; ?>" name="tanggal_peminjaman">
-                        </div>
-                </div>
+                    </div> -->
                 <div class="row mb-3">
                         <div class="col-md-2">Tanggal Pengembalian</div>
                         <div class="col-md-8">
@@ -67,9 +59,9 @@
                     <div class="col-md-2"></div>
                     <div class="col-md-8 mb-2">
                        <!-- <div class="row gap-2"> -->
-                       <button type="submit" class="btn btn-primary btn-md col-12 col-md-8 col-lg-1 mb-2" name="submit">Simpan</button>
-                        <button type="reset" class="btn btn-secondary btn-md col-12 col-md-8 col-lg-1 mb-2">Reset</button>
-                        <a href="?page=laporan" class="btn btn-danger btn-md col-12 col-md-8 col-lg-1 mb-2">Kembali</a>
+                       <button type="submit" class="btn btn-primary" name="submit">Simpan</button>
+                        <button type="reset" class="btn btn-secondary">Reset</button>
+                        <a href="?page=laporan" class="btn btn-danger">Kembali</a>
                        <!-- </div> -->
                     </div>
                 </div>

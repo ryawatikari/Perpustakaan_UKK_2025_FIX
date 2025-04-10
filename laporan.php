@@ -84,7 +84,7 @@
                         // admin bisa akses button hapus kapan saja baik status dikembalikan maupun dipinjam sedangkan peminjam hanya bisa menghapus data yang statusnya sudah dikembalikan
                         if ($_SESSION['user']['level'] == 'admin' || ($status_peminjaman == 'dikembalikan' && $_SESSION['user']['level'] == 'peminjam')) :
                     ?>
-                        <a onclick="return confirm('Apakah anda yakin menghapus data ini?')" href="?page=peminjaman_hapus&&id=<?= $data['id_peminjaman']?>" class="btn btn-danger">
+                        <a onclick="return confirm('Apakah anda yakin menghapus data ini?')" href="?page=laporan_peminjaman_hapus&&id=<?= $data['id_peminjaman']?>" class="btn btn-danger">
                             <i class="fa-regular fa-trash-can"></i>
                         </a>
                     <?php endif; ?>

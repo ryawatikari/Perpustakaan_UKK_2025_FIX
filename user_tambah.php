@@ -7,6 +7,7 @@
             <!-- membuat logic menambahan tambah data kategori -->
                 <?php
                     if(isset ($_POST['submit'])){
+                        $nama = $_POST['nama'];
                         $username = $_POST['username'];
                         $email = $_POST['email'];
                         $password = $_POST['password']; // Enkripsi password
@@ -14,7 +15,7 @@
                         $no_telpon = $_POST['no_telpon'];
                         $level = $_POST['level'];
 
-                        $query = mysqli_query($koneksi, "INSERT INTO user(username, email, password, alamat, no_telpon, level) values('$username', '$email', '$password' , '$alamat' , '$no_telpon' , '$level')");
+                        $query = mysqli_query($koneksi, "INSERT INTO user(nama, username, email, password, alamat, no_telpon, level) values('$nama', '$username', '$email', '$password' , '$alamat' , '$no_telpon' , '$level')");
                             //insert into utk menginput data ke database
                             if ($query){
                                 echo '<script>alert("Tambah data berhasil");
@@ -26,9 +27,14 @@
                             }
                     }
                 ?>
-
                 <div class="row mb-3">
                     <div class="col-md-2">Nama Lengkap</div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" name="nama">
+                        </div>
+                    </div>
+                <div class="row mb-3">
+                    <div class="col-md-2">Username</div>
                         <div class="col-md-8">
                             <input type="text" class="form-control" name="username">
                         </div>

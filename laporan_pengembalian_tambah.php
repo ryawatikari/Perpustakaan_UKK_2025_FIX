@@ -36,7 +36,7 @@
                        <!-- menampilkan nama Peminjam -->
                        <div class="row">
                         <div class="row mb-3">
-                            <div class="col-md-2">Nama Lengkap</div>
+                            <div class="col-md-2">Peminjam</div>
                             <div class="col-md-8">
                             <input type="text" id="cariPeminjam" class="form-control" placeholder="Cari peminjam">
                             <div id="dropdownPeminjam" class="dropdown-menu"></div>
