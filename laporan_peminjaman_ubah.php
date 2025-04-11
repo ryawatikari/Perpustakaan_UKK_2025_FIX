@@ -6,10 +6,12 @@
                 <?php
                     $id = $_GET['id'];
                     if(isset ($_POST['submit'])){
+                        $id_buku = $_POST['id_buku'];
                         $id_user = $_SESSION['user']['id_user'];
+                        $tanggal_peminjaman = $_POST['tanggal_peminjaman'];
                         $tanggal_pengembalian = $_POST['tanggal_pengembalian'];
                         $status_peminjaman = $_POST['status_peminjaman'];
-                        $query = mysqli_query($koneksi, "UPDATE peminjaman set id_user='$id_user', tanggal_pengembalian='$tanggal_pengembalian', status_peminjaman='$status_peminjaman' WHERE id_peminjaman=$id");
+                        $query = mysqli_query($koneksi, "UPDATE peminjaman set id_user='$id_user', id_buku='$id_buku', tanggal_peminjaman='$tanggal_peminjaman', tanggal_pengembalian='$tanggal_pengembalian', status_peminjaman='$status_peminjaman' WHERE id_peminjaman=$id");
 
                         if ($query){
                             echo '<script>alert("Ubah data berhasil");
@@ -23,7 +25,7 @@
                     $query = mysqli_query($koneksi, "SELECT*FROM peminjaman WHERE id_peminjaman=$id");
                     $data = mysqli_fetch_array ($query);
                 ?>
-                <!-- <div class="row mb-3">
+                <div class="row mb-3">
                         <div class="col-md-2">Buku</div>
                         <div class="col-md-8">
                             <select name="id_buku" class="form-control">
@@ -39,7 +41,13 @@
                                 ?>  
                             </select>
                         </div>
-                    </div> -->
+                    </div>
+                <div class="row mb-3">
+                        <div class="col-md-2">Tanggal Peminjaman</div>
+                        <div class="col-md-8">
+                           <input type="date" class="form-control" value="<?=  $data['tanggal_peminjaman']; ?>" name="tanggal_peminjaman">
+                        </div>
+                </div>
                 <div class="row mb-3">
                         <div class="col-md-2">Tanggal Pengembalian</div>
                         <div class="col-md-8">

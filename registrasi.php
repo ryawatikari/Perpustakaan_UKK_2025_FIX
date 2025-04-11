@@ -7,10 +7,11 @@ include "koneksi.php"
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Login 07</title>
+  	<title>Registrasi</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+	 <!-- Favicon -->
+     <link rel="icon" type="image/png" href="assets/images/favicon.png">
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -21,9 +22,10 @@ include "koneksi.php"
 	<body>
 	<section class="ftco-section">
 		<div class="container">
+			
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">Registrasi</h2>
+					<h2 class="heading-section">Buat Akun dan Mulai Membaca</h2>
 				</div>
 			</div>
 			<div class="row justify-content-center">
@@ -39,7 +41,7 @@ include "koneksi.php"
 						<div class="login-wrap p-4 p-lg-5">
 			      	<div class="d-flex">
 			      		<div class="w-100">
-			      			<h3 class="mb-4">Sign In</h3>
+			      			<h3 class="mb-4">Buat Akun</h3>
 			      		</div>
 								<div class="w-100">
 									<p class="social-media d-flex justify-content-end">
@@ -53,34 +55,18 @@ include "koneksi.php"
 											$nama = $_POST['nama'];
 											$username = $_POST['username'];
 											$email = $_POST['email'];
-											$password = $_POST['password']; // Enkripsi password
+											$password = md5($_POST['password']); // Enkripsi password
 											$alamat = $_POST['alamat'];
 											$no_telpon = $_POST['no_telpon'];
 
-                                            $data = mysqli_query($koneksi, "SELECT * FROM user WHERE nama='$nama' , username='$username' , email='$email' , password='$password' , alamat='$alamat' , no_telpon='$no_telpon'");
-                                            $cek = mysqli_num_rows($data);
-                                            // $sql = "SELECT * FROM user WHERE email='$email'";
-                                            // $result = $conn->query($sql);
-
-                                            // if ($result->num_rows > 0) {
-                                            //     $row = $result->fetch_assoc();
-                                            //     if (password_verify($password, $row['password'])) {
-                                            //         $_SESSION['user_id'] = $row['id'];
-                                            //         $_SESSION['level'] = $row['level'];
-                                            //         echo "Login berhasil!";
-                                            //     } else {
-                                            //         echo "Password salah!";
-                                            //     }
-                                            // } else {
-                                            //     echo "Email tidak ditemukan!";
-                                            // }
-                                            if ($cek > 0){
-                                                $_SESSION['user'] = mysqli_fetch_array($data);
-                                                echo '<script>alert("Selamat datang, login berhasil!");
-                                                location.href="dashboard.php"; </script>';
-                                            } else {
-                                                echo '<script>alert("Maaf, email atau password salah");</script>';
-                                            }
+                                            $insert = mysqli_query($koneksi, "INSERT INTO user (nama, username, email, password, alamat, no_telpon, level) VALUES ('$nama', '$username', '$email', '$password', '$alamat', '$no_telpon', 'peminjam')");
+											if ($insert){
+												echo "<script>alert('Registrasi Berhasil! Silahkan Login'); window.location='login.php';</script>";
+											} else {
+												echo "<script>alert('Registrasi Gagal!');</script>";
+											} 
+										} else {
+											echo "<script>alert('Silahkan isi form registrasi');</script>";
                                         }
                                         
                                         ?>
@@ -102,14 +88,14 @@ include "koneksi.php"
 									<input type="password" class="form-control" name="password" placeholder="Password" required>
 									</div>	<div class="form-group mb-3">
 										<label class="label">Alamat</label>
-										<textarea name="alamat" id="" rows="5" class="form-control py-2"></textarea>
+										<textarea name="alamat" id="" rows="3" class="form-control py-2"></textarea>
 									</div>
 									<div class="form-group mb-3">
 										<label class="label">No Telpon</label>
-									<input type="password" class="form-control" name="no_telpon" placeholder="Password" required>
+									<input type="no_telpon" class="form-control" name="no_telpon" placeholder="Password" required>
 									</div>
 								<div class="form-group">
-									<button type="submit" value="registrasi" name="registrasi" class="form-control btn btn-primary submit px-3">register</button>
+									<button type="submit" value="registrasi" name="registrasi" class="form-control btn btn-primary submit px-3">Buat Akun</button>
 									<!-- <button type="submit" class="form-control btn btn-info submit px-3">login</button> -->
 								</div>
 								<div class="form-group d-md-flex">

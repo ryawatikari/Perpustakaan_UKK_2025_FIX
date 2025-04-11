@@ -54,18 +54,31 @@
                     ?>
                 </td>  
                 <td>
-                    <?php
-                        // Menentukan denda jika pengembalian melebihi jatuh tempo
-                        $tanggal_pengembalian = $data['tanggal_pengembalian'];
-                        $jatuh_tempo = strtotime($tanggal_jatuh_tempo);
-                        $tanggal_kembali = strtotime($tanggal_pengembalian);
+                <?php
+                    $tanggal_pengembalian = $data['tanggal_pengembalian'];
+                    $tanggal_pinjam = $data['tanggal_peminjaman'];
+                    $tanggal_jatuh_tempo = date('Y-m-d', strtotime($tanggal_pinjam . ' + 5 days'));
 
-                        $denda = 0;
-                        if ($tanggal_kembali > $jatuh_tempo) {
-                            $denda = ($tanggal_kembali - $jatuh_tempo) / (60 * 60 * 24) * 1000;
+                    $denda = 0;
+                    if (strtotime($tanggal_pengembalian) > strtotime($tanggal_jatuh_tempo)) {
+                        // Hitung jumlah hari keterlambatan (tanpa hari Minggu)
+                        $start = new DateTime($tanggal_jatuh_tempo);
+                        $end = new DateTime($tanggal_pengembalian);
+                        $interval = new DateInterval('P1D');
+                        $daterange = new DatePeriod($start, $interval, $end->modify('+1 day'));
+
+                        $jumlahHariKeterlambatan = 0;
+                        foreach ($daterange as $date) {
+                            if ($date->format('w') != 0) { // 0 adalah Minggu
+                                $jumlahHariKeterlambatan++;
+                            }
                         }
-                        echo number_format($denda, 0, ',', '.');
-                    ?>
+
+                        $denda = $jumlahHariKeterlambatan * 1000;
+                    }
+
+                    echo number_format($denda, 0, ',', '.');
+                ?>
                 </td> 
                 <td>
                     <?php if ($data['status_peminjaman'] == 'Dikembalikan') : ?>

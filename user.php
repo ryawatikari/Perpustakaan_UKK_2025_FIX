@@ -1,12 +1,11 @@
 
 <h1 class="mt-4">User Management</h1>
-<div class="card shadow">
+<div class="">
     <div class="card-body">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-8">
             <a href="?page=user_tambah" class="btn btn-primary mb-2"> + Tambah Data</a>
-                <table class="table table-bordered table-hover table-sm mt-3 w-100" id="dataTable" cellspacing="0">
-                       
+                <table id="myTable" class="table table-bordered table-hover bg-light">
                     <thead class="mb-3 bg-info text-center text-white">
                             <th>No</th>
                             <th>Nama Lengkap</th>

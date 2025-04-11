@@ -47,7 +47,7 @@
                                 <th>Aksi</th>
                             </tr>
                         </thead>
-                        <tbody class="text-start bg-info-subtle">
+                        <tbody class="text-start">
                             <?php
                             $i = 1;
                             $nama = $_GET['nama'] ?? '';
@@ -135,12 +135,6 @@ document.addEventListener('DOMContentLoaded', function () {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <style>
-    /* .card {
-        background-color: #ffffff;
-    } */
-    .display{
-        border: 1px solid #dfe6e9;
-    }
 
     .btn-warning:hover {
         background-color: rgb(243, 156, 18);

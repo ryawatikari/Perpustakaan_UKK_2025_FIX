@@ -152,7 +152,7 @@ if (!isset($_SESSION['user'])){
         <script>
             $(document).ready(function () {
             $('#myTable').DataTable({
-                "pageLength": 3 // jumlah baris per halaman agar tombol "Next" muncul
+                "pageLength": 5 // jumlah baris per halaman agar tombol "Next" muncul
             });
             });
         </script>
@@ -171,7 +171,7 @@ if (!isset($_SESSION['user'])){
         color: #747d8c !important;
     }
     .bg-subtle{
-        background-color:rgb(215, 235, 247);
+        background-color:rgb(229, 242, 249);
     }
 
 </style>

@@ -5,15 +5,16 @@
         <?php
         if ($_SESSION['user']['level'] !='peminjam') :
         ?>
-        <a href="?page=peminjaman_tambah" class="btn btn-primary"><i class="fa fa-plus"></i>Tambah Pengembalian</a>
+        <a href="?page=laporan_pengembalian_tambah" class="btn btn-primary"><i class="fa fa-plus"></i>Tambah Pengembalian</a>
         <!-- <a href="cetak.php" target="blank" class="btn btn-primary">Cetak Data</a> -->
         <?php endif; ?>
         </div>
-    <div class="col-md-12 rounded-3">    
-        <table class="table table-bordered table-hover shadow bg-body mt-5" id="dataTable" width="100%" cellspacing="0">
+    <div class="col-md-12  mt-5">    
+        <table id="myTable" class="table table-bordered table-hover shadow bg-body" id="dataTable" width="100%" cellspacing="0">
         
         <thead class="bg-info text-white text-center">
         <tr>    
+                <th>No</th>
                 <th>Nama</th>
                 <th>Buku</th>
                 <th>Penerbit</th>
@@ -39,7 +40,7 @@
             ?>
             <tbody>
             <tr>
-                <!-- <td><?= $i++; ?></td> -->
+                <td><?= $i++; ?></td>
                 <td><?= $data['nama']; ?></td> 
                 <td><?= $data['judul']; ?></td> 
                 <td><?= $data['penerbit']; ?></td>

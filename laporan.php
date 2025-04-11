@@ -10,10 +10,10 @@
         <a href="cetak.php" target="blank" class="btn btn-primary ">Cetak Data</a>
         <?php endif; ?>
         </div>
-    <div class="col-md-12 rounded-3">    
+    <div class="col-md-12 mt-4">    
         <div class="table-responsive">
-        <table class="table table-bordered table-hover shadow bg-body mt-5" id="dataTable" width="100%" cellspacing="0">
-        <thead class="bg-info text-white text-center">
+        <table id="myTable" class="table table-striped- table-bordered table-hover bg-light">
+        <thead class="bg-info text-light text-center">
         <tr>
                 <th>Nama</th>
                 <th>Buku</th>
@@ -38,7 +38,7 @@
                 }
                 while ($data = mysqli_fetch_array($query)) :
             ?>
-            <tbody>
+            <tbody class="text-start">
             <tr>
                 <td><?= $data['nama'] ?></td>
                 <td><?= $data['judul']; ?></td> 

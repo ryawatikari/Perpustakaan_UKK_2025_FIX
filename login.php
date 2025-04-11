@@ -34,13 +34,13 @@ include "koneksi.php"
 							<div class="text w-100">
 								<h2>Halo, Sobat Buku!</h2>
 								<p>Masuk ke perpustakaan digitalmu. Belum punya akun? Yuk, daftar!</p>
-								<a href="registrasi.php" class="btn btn-white btn-outline-white">Registrasi</a>
+								<a href="registrasi.php" class="btn btn-white btn-outline-white">Buat Akun</a>
 							</div>
 			      </div>
 						<div class="login-wrap p-4 p-lg-5">
 			      	<div class="d-flex">
 			      		<div class="w-100">
-			      			<h3 class="mb-4">Sign In</h3>
+			      			<h3 class="mb-4">Yuk, Masuk Dulu!</h3>
 			      		</div>
 								<div class="w-100">
 									<p class="social-media d-flex justify-content-end">
@@ -84,14 +84,14 @@ include "koneksi.php"
 							<form method="POST" class="signin-form">
 								<div class="form-group mb-3">
 										<label class="label">Email</label>
-										<input type="text" class="form-control" name="email" placeholder="Email" required>
+										<input type="text" class="form-control" name="email" placeholder="Masukkan Email" required>
 								</div>
 								<div class="form-group mb-3">
-									<label class="label">Password</label>
-								<input type="password" class="form-control" name="password" placeholder="Password" required>
+									<label class="label">Kata Sandi</label>
+								<input type="password" class="form-control" name="password" placeholder="Masukkan Kata Sandi" required>
 								</div>
 								<div class="form-group">
-									<button type="submit" class="form-control btn btn-primary submit px-3" name="login">Login</button>
+									<button type="submit" class="form-control btn btn-primary submit px-3" name="login">Masuk</button>
 								</div>
 								<div class="form-group d-md-flex">
 									<div class="w-50 text-left">

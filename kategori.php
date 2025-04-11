@@ -1,15 +1,10 @@
 <h1 class="mt-4">Kategori Buku</h1>
-<div class="card shadows w-75ss">
+<div class="">
     <div class="card-body">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
             <a href="?page=kategori_tambah" class="btn btn-primary mb-2"> + Tambah Data</a>
-                <table class="table table-hover table-sm mt-3 w-100" id="dataTable" cellspacing="0">
-                        <colgroup>
-                            <col style="width: 5%;" /> 
-                            <col style="width: 37%;" /> 
-                            <col style="width: 7%;" /> 
-                         </colgroup>
+                <table id="myTable"  class="table table-hover mt-3 table-responsive bg-light">
                     <thead class="mb-3 bg-info text-center text-white">
                             <th>No</th>
                             <th>Nama Kategori</th>
