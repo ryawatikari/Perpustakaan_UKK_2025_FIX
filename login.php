@@ -24,7 +24,7 @@ include "koneksi.php"
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">Login</h2>
+					<h2 class="heading-section">Yuk, Masuk Dulu!</h2>
 				</div>
 			</div>
 			<div class="row justify-content-center">
@@ -40,7 +40,7 @@ include "koneksi.php"
 						<div class="login-wrap p-4 p-lg-5">
 			      	<div class="d-flex">
 			      		<div class="w-100">
-			      			<h3 class="mb-4">Yuk, Masuk Dulu!</h3>
+			      			<h3 class="mb-4">Login</h3>
 			      		</div>
 								<div class="w-100">
 									<p class="social-media d-flex justify-content-end">
@@ -95,13 +95,13 @@ include "koneksi.php"
 								</div>
 								<div class="form-group d-md-flex">
 									<div class="w-50 text-left">
-										<label class="checkbox-wrap checkbox-primary mb-0">Remember Me
+										<label class="checkbox-wrap checkbox-primary mb-0">Ingat saya
 												<input type="checkbox" checked>
 												<span class="checkmark"></span>
 													</label>
 												</div>
 												<div class="w-50 text-md-right">
-													<a href="#">Forgot Password</a>
+													<a href="#">Lupa password</a>
 												</div>
 								</div>
 							</form>

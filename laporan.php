@@ -33,12 +33,12 @@
                 $query = mysqli_query($koneksi, "SELECT * FROM peminjaman 
                     JOIN user ON user.id_user = peminjaman.id_user 
                     JOIN buku ON buku.id_buku = peminjaman.id_buku 
-                    WHERE peminjaman.id_user = ".$_SESSION['user']['id_user']);
+                    WHERE peminjaman.id_user = ".$_SESSION['user']['id_user'] ." AND status_peminjaman = 'dipinjam'");
             } else {
                 $query = mysqli_query($koneksi, "SELECT * FROM peminjaman 
                     JOIN user ON user.id_user = peminjaman.id_user 
                     JOIN buku ON buku.id_buku = peminjaman.id_buku 
-                    ");
+                    WHERE status_peminjaman = 'dipinjam'");
             }
 
             while ($data = mysqli_fetch_array($query)) :

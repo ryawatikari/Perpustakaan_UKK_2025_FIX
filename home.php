@@ -36,7 +36,7 @@
                                     <?php 
                                         echo mysqli_num_rows(mysqli_query($koneksi, "SELECT*FROM peminjaman"));
                                     ?>     
-                                    Total Peminjam</div>
+                                    Total Transaksi</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">Lihat Detail</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>

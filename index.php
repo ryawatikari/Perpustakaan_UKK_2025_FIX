@@ -356,8 +356,8 @@
                 <div class="testimonial-active col-12 col-sm-8 text-center m-auto">
                     <!-- Single Testimonial -->
                     <div class="single-testimonial">
-                        <h2 class="single-testimonial__name mb-2">Emily Bratkovich</h2>
-                        <p class="single-testimonial__comment">Dorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Thanks!!</p>
+                        <h2 class="single-testimonial__name mb-2">Ananda Salsabila</h2>
+                        <p class="single-testimonial__comment">Perpustakaan ini sangat membantu saya dalam menyelesaikan tugas akhir. Koleksinya lengkap dan stafnya ramah!</p>
                         <p class="single-testimonial__rating text-center">
                             <span><i class="fa fa-star"></i></span>
                             <span><i class="fa fa-star"></i></span>
@@ -366,14 +366,14 @@
                             <span><i class="fa fa-star-half"></i></span>
                         </p>
                         <h5 class="single-testimonial__site">
-								<a href="#" class="font-weight__300">Google</a>
+								<a href="#" class="font-weight__300">Instagram</a>
 							</h5>
                     </div>
                     <!--/ End Single Testimonial -->
                     <!-- Single Testimonial -->
                     <div class="single-testimonial">
-                        <h2 class="single-testimonial__name mb-2">Clare McCabe</h2>
-                        <p class="single-testimonial__comment">Ponsectetur adipisicing elit, sed do eiusmod tempor exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Very Helpfull!</p>
+                        <h2 class="single-testimonial__name mb-2">Nur Fitri Ulfiah</h2>
+                        <p class="single-testimonial__comment">Saya suka suasananya yang tenang dan nyaman. Tempat terbaik untuk belajar dan membaca buku favorit saya.</p>
                         <p class="single-testimonial__rating text-center">
                             <span><i class="fa fa-star"></i></span>
                             <span><i class="fa fa-star"></i></span>
@@ -387,8 +387,8 @@
                     <!--/ End Single Testimonial -->
                     <!-- Single Testimonial -->
                     <div class="single-testimonial">
-                        <h2 class="single-testimonial__name mb-2">Keri Yamnik</h2>
-                        <p class="single-testimonial__comment">Gpsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 5 star!</p>
+                        <h2 class="single-testimonial__name mb-2">Ibu Astrid - orang tua murid</h2>
+                        <p class="single-testimonial__comment">Anak saya jadi semangat membaca setelah sering mengunjungi perpustakaan ini. Banyak buku anak dan kegiatan menarik!</p>
                         <p class="single-testimonial__rating text-center">
                             <span><i class="fa fa-star"></i></span>
                             <span><i class="fa fa-star"></i></span>
@@ -410,50 +410,40 @@
     <section id="stats" class="stats section">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-sm-3">
+                <div class="col-12 col-sm-4">
                     <!-- Single Count -->
                     <div class="single-stat text-center">
                         <div class="single-stat__icon">
                             <i class="fa fa-check"></i>
                         </div>
                         <h2 class="single-stat__counter counter">2000</h2>
-                        <p>Projects Finished</p>
+                        <p>Buku Tersedia</p>
                     </div>
                     <!--/ End Single Count -->
                 </div>
-                <div class="col-12 col-sm-3">
+                <div class="col-12 col-sm-4">
                     <!-- Single Count -->
                     <div class="single-stat text-center">
                         <div class="single-stat__icon">
                             <i class="fa fa-star"></i>
                         </div>
                         <h2 class="single-stat__counter counter">449</h2>
-                        <p>Happy Clients</p>
+                        <p>Pengguna Terdaftar</p>
                     </div>
                     <!--/ End Single Count -->
                 </div>
-                <div class="col-12 col-sm-3">
+                <div class="col-12 col-sm-4">
                     <!-- Single Count -->
                     <div class="single-stat text-center">
                         <div class="single-stat__icon">
                             <i class="fa fa-pencil-square"></i>
                         </div>
                         <h2 class="single-stat__counter counter">8640</h2>
-                        <p>Hours Worked</p>
+                        <p>Transaksi Peminjaman</p>
                     </div>
                     <!--/ End Single Count -->
                 </div>
-                <div class="col-12 col-sm-3">
-                    <!-- Single Count -->
-                    <div class="single-stat text-center">
-                        <div class="single-stat__icon">
-                            <i class="fa fa-coffee"></i>
-                        </div>
-                        <h2 class="single-stat__counter counter">43500</h2>
-                        <p>Cups of Coffee</p>
-                    </div>
-                    <!--/ End Single Count -->
-                </div>
+                
             </div>
         </div>
     </section>
@@ -465,18 +455,18 @@
                 <div class="col-12 col-md-6">
                     <!-- Contact Form -->
                     <div class="section-title">
-                        <h2 class="contact-form__title">Ask a Question</h2>
+                        <h2 class="contact-form__title">Beri Pertanyaan</h2>
                     </div>
                     <form>
                         <div class="form-group row">
-                            <input class="col form-control form-control-lg" type="text" name="name" placeholder="Your Name">
-                            <input class="col form-control form-control-lg ml-2" type="email" name="email" placeholder="Your Email">
+                            <input class="col form-control form-control-lg" type="text" name="name" placeholder="Masukkan Nama">
+                            <input class="col form-control form-control-lg ml-2" type="email" name="email" placeholder="Masukkan Email">
                         </div>
                         <div class="form-group row">
-                            <textarea class="col form-control form-control-lg" required name="message" placeholder="Your Message"></textarea>
+                            <textarea class="col form-control form-control-lg" required name="message" placeholder="Masukkan Pesan Kmau"></textarea>
                         </div>
                         <div class="form-group row">
-                            <button type="submit" class="btn btn-shadow btn-md btn-outline-primary base-font-size">Submit</button>
+                            <button type="submit" class="btn btn-shadow btn-md btn-outline-primary base-font-size">Kirim</button>
                         </div>
                     </form>
                     <!--/ End Contact Form -->
@@ -565,13 +555,13 @@
                         <div class="footer-main__menu">
                             <ul class="nav justify-content-center">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link text-white">Terms</a>
+                                    <a href="#features" class="nav-link text-white">Fitur</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link text-white">Privacy</a>
+                                    <a href="#team" class="nav-link text-white">Tim Kami</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link text-white">Security</a>
+                                    <a href="#contact" class="nav-link text-white">Contact</a>
                                 </li>
                             </ul>
                         </div>
