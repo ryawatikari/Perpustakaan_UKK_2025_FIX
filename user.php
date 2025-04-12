@@ -12,6 +12,7 @@
                             <th>Email</th>
                             <th>Alamat</th>
                             <th>No Telpon</th>
+                            <th>Level</th>
                             <th>Aksi</th>
                     </thead>
                     <?php 
@@ -27,6 +28,7 @@
                                 <td><?php echo $data['email']; ?></td>
                                 <td><?php echo $data['alamat']; ?></td>
                                 <td><?php echo $data['no_telpon']; ?></td>
+                                <td><?php echo $data['level']; ?></td>
                                 <td>
                                     <a href="?page=user_ubah&&id=<?php echo $data['id_user']; ?>" class="btn btn-warning text-white"><i class="fa-solid fa-pen-to-square"></i></a>
                                     <a onclick="return confirm('Apakah anda yakin mau menghapus data ini')" href="?page=user_hapus&&id=<?php echo $data['id_user']; ?>" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>

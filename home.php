@@ -12,7 +12,7 @@
                                     ?>    
                                     Total Kategori</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">Lihat Detail</a>
+                                        <a class="small text-white stretched-link" href="?page=kategori">Lihat Detail</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -25,7 +25,7 @@
                                     ?>     
                                     Total Buku</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">Lihat Detail</a>
+                                        <a class="small text-white stretched-link" href="?page=buku">Lihat Detail</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -51,7 +51,7 @@
                                     ?>     
                                     Total User</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">Lihat Detail</a>
+                                        <a class="small text-white stretched-link" href="?page=user">Lihat Detail</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>

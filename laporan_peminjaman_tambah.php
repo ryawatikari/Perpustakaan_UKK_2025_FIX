@@ -1,3 +1,4 @@
+<title>Tambah peminjaman</title>
 <h1 class="mt-4">Pinjam Buku? Isi Dulu Datanya!</h1>
 <div class="card text-bg-light">
     <div class="card-body">
@@ -16,18 +17,26 @@
                     $data = mysqli_fetch_assoc($cek_peminjaman);
                     $jumlah_peminjaman = $data['total'];
 
-                    // Admin boleh meminjam tanpa batas
-                    if ($id_user === 'admin' || $jumlah_peminjaman < 2) {
-                        $query = mysqli_query($koneksi, "INSERT INTO peminjaman(id_buku, id_user, tanggal_peminjaman, tanggal_jatuh_tempo, status_peminjaman) 
-                                                        VALUES('$id_buku', '$id_user', '$tanggal_sekarang', '$tanggal_jatuh_tempo', 'dipinjam')");
+                    // Cek apakah user sudah meminjam buku dengan ID yang sama dan belum dikembalikan
+                    $cek_buku_sama = mysqli_query($koneksi, "SELECT * FROM peminjaman WHERE id_user='$id_user' AND id_buku='$id_buku' AND status_peminjaman='dipinjam'");
 
-                        if ($query) {
-                            echo '<script>alert("Peminjaman Berhasil."); window.location.href = "?page=laporan";</script>';
+                    // Jika buku sudah dipinjam, maka tidak bisa meminjam lagi
+                    if (mysqli_num_rows($cek_buku_sama) > 0){
+                        echo '<script>alert("Kamu sudah meminjam buku ini."); window.location.href = "?page=laporan"</script>';
+                    }else{
+                        // Admin boleh meminjam tanpa batas
+                        if ($id_user === 'admin' || $jumlah_peminjaman < 2) {
+                            $query = mysqli_query($koneksi, "INSERT INTO peminjaman(id_buku, id_user, tanggal_peminjaman, tanggal_jatuh_tempo, status_peminjaman) 
+                                                            VALUES('$id_buku', '$id_user', '$tanggal_sekarang', '$tanggal_jatuh_tempo', 'dipinjam')");
+    
+                            if ($query) {
+                                echo '<script>alert("Peminjaman Berhasil."); window.location.href = "?page=laporan";</script>';
+                            } else {
+                                echo '<script>alert("Peminjaman Gagal."); window.location.href = "?page=laporan"</script>';
+                            }
                         } else {
-                            echo '<script>alert("Peminjaman Gagal: ' . mysqli_error($koneksi) . '");</script>';
+                            echo '<script>alert("User sudah mencapai batas maksimal peminjaman (2 buku).");</script>';
                         }
-                    } else {
-                        echo '<script>alert("User sudah mencapai batas maksimal peminjaman (2 buku).");</script>';
                     }
                 }
                 ?>

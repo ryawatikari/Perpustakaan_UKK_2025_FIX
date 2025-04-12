@@ -98,7 +98,7 @@
                 <div class="row mb-3">
                 <div class="col-md-2">Tahun Terbit</div>
                     <div class="col-md-8">
-                        <input type="number"  class="form-control" name="tahun_terbit" max="2024">
+                        <input type="number"  class="form-control" name="tahun_terbit" max="2025">
                     </div>
                 </div>
                 <div class="row mb-3">

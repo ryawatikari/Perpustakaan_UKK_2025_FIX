@@ -73,6 +73,10 @@ if (!isset($_SESSION['user'])){
                                     <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                    Peminjaman
                             </a>
+                            <a class="nav-link" href="?page=laporan_pengembalian">
+                                    <div class="sb-nav-link-icon"><i class="fa-solid fa-arrow-right-arrow-left"></i></div>
+                                    Pengembalian
+                            </a>
                             <!-- <?php
                             if ($_SESSION['user']['level'] == 'peminjam') :
                             ?>
@@ -80,10 +84,10 @@ if (!isset($_SESSION['user'])){
                             <?php
                             if ($_SESSION['user']['level'] == 'admin') :
                             ?>
-                            <a class="nav-link" href="?page=laporan_pengembalian">
+                            <!-- <a class="nav-link" href="?page=laporan_pengembalian">
                                     <div class="sb-nav-link-icon"><i class="fa-solid fa-arrow-right-arrow-left"></i></div>
                                     Pengembalian
-                            </a>
+                            </a> -->
                             
                             <a class="nav-link" href="?page=kategori">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
@@ -95,10 +99,10 @@ if (!isset($_SESSION['user'])){
                             </a>
                         
                             <?php endif; ?>
-                            <a class="nav-link" href="?page=ulasan">
+                            <!-- <a class="nav-link" href="?page=ulasan">
                                 <div class="sb-nav-link-icon"><i class="fas fa-comment"></i></div>
                                 Ulasan
-                            </a>
+                            </a> -->
                             <a class="nav-link" href="logout.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-power-off"></i></div>
                                 Logout
@@ -107,7 +111,7 @@ if (!isset($_SESSION['user'])){
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
-                        <?php echo $_SESSION['user']['nama'] . '|' . $_SESSION['user']['level']; ?>
+                        <?php echo $_SESSION['user']['username'] . ' | ' . $_SESSION['user']['level']; ?>
                     </div>
                 </nav>
             </div>
