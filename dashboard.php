@@ -14,7 +14,7 @@ if (!isset($_SESSION['user'])){
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Dashboard</title>
+        <!-- <title>Dashboard</title> -->
          <!-- Favicon -->
         <link rel="icon" type="image/png" href="assets/images/favicon.png">
         <!-- Link CSS DataTables -->
@@ -81,7 +81,7 @@ if (!isset($_SESSION['user'])){
                             if ($_SESSION['user']['level'] == 'admin') :
                             ?>
                             <a class="nav-link" href="?page=laporan_pengembalian">
-                                    <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                    <div class="sb-nav-link-icon"><i class="fa-solid fa-arrow-right-arrow-left"></i></div>
                                     Pengembalian
                             </a>
                             
@@ -107,7 +107,7 @@ if (!isset($_SESSION['user'])){
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
-                        <?php echo $_SESSION['user']['username']; ?>
+                        <?php echo $_SESSION['user']['nama'] . '|' . $_SESSION['user']['level']; ?>
                     </div>
                 </nav>
             </div>
@@ -148,18 +148,27 @@ if (!isset($_SESSION['user'])){
         <!-- jQuery + DataTables JS -->
         <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
         <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+        
 
         <script>
-            $(document).ready(function () {
-            $('#myTable').DataTable({
-                "pageLength": 5 // jumlah baris per halaman agar tombol "Next" muncul
+            $(document).ready(function() {
+            $('#myTable').DataTable();
             });
-            });
+
+
         </script>
     </body>
 </html>
 
-<style setup>
+<style>
+    h1{
+        text-align: center;
+        font-family: "Roboto", serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-variation-settings:"wdth" 100;
+        color: #0c2461;
+    }
     .fw-semibold{
         color: #4b6584;
     }

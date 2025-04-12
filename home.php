@@ -1,4 +1,5 @@
-<h1 class="mt-4">Dashboard</h1>
+<title>Dashboard</title>
+<h1 class="mt-5">Pusat Informasi dan Koleksi Buku Anda</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ol>
@@ -11,7 +12,7 @@
                                     ?>    
                                     Total Kategori</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <a class="small text-white stretched-link" href="#">Lihat Detail</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -24,7 +25,7 @@
                                     ?>     
                                     Total Buku</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <a class="small text-white stretched-link" href="#">Lihat Detail</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -33,11 +34,11 @@
                                 <div class="card bg-success text-white mb-4">
                                     <div class="card-body">
                                     <?php 
-                                        echo mysqli_num_rows(mysqli_query($koneksi, "SELECT*FROM ulasan"));
+                                        echo mysqli_num_rows(mysqli_query($koneksi, "SELECT*FROM peminjaman"));
                                     ?>     
-                                    Total Ulasan</div>
+                                    Total Peminjam</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <a class="small text-white stretched-link" href="#">Lihat Detail</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -50,7 +51,7 @@
                                     ?>     
                                     Total User</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <a class="small text-white stretched-link" href="#">Lihat Detail</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>

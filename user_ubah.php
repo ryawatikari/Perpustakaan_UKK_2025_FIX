@@ -8,10 +8,13 @@
                  $query = mysqli_query($koneksi, "SELECT*FROM user WHERE id_user = '$id'");
                  $data = mysqli_fetch_array($query);
                     if(isset ($_POST['submit'])){
+                        $nama = $_POST['nama'];
                         $username = $_POST['username'];
+                        $alamat = $_POST['alamat'];
+                        $no_telpon = $_POST['no_telpon'];
                         $level = $_POST['level'];
 
-                        $query = mysqli_query($koneksi, "UPDATE user SET username='$username', level='$level' WHERE id_user=$id");
+                        $query = mysqli_query($koneksi, "UPDATE user SET nama='$nama', username='$username', alamat='$alamat', no_telpon='$no_telpon', level='$level' WHERE id_user=$id");
 
                         if ($query){
                             echo '<script>alert("Ubah data berhasil"); 
@@ -26,15 +29,29 @@
                 <div class="row mb-3">
                     <div class="col-md-2">Nama Lengkap</div>
                         <div class="col-md-8">
+                            <input type="text" class="form-control" name="nama" value="<?= $data ['nama']; ?>">
+                        </div>
+                    </div>
+                <div class="row mb-3">
+                    <div class="col-md-2">Username</div>
+                        <div class="col-md-8">
                             <input type="text" class="form-control" name="username" value="<?= $data ['username']; ?>">
                         </div>
                     </div>
-
-<<<<<<< Updated upstream
-                <!-- <div class="row mb-3">
-=======
                 <div class="row mb-3">
->>>>>>> Stashed changes
+                    <div class="col-md-2">Alamat</div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" name="alamat" value="<?= $data ['alamat']; ?>">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                    <div class="col-md-2">No Telpon</div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" name="no_telpon" value="<?= $data ['no_telpon']; ?>">
+                        </div>
+                </div>
+
+                <!-- <div class="row mb-3">
                         <div class="col-md-2">Level</div>
                         <div class="col-md-8">
                             <select class="form-control" name="level" required>

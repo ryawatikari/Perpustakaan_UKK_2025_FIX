@@ -3,7 +3,7 @@ session_start();
 $host = "localhost";
 $user = "root";
 $password = "";
-$database = "pustaka1";
+$database = "perpus";
 
 $koneksi = mysqli_connect($host, $user, $password, $database);
 

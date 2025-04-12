@@ -1,4 +1,4 @@
-<h1 class="mt-4">Buku</h1>
+<h1 class="mt-4">Isi Data Buku</h1>
 <div class="card text-bg-light">
     <div class="card-body">
         <div class="row">
@@ -10,6 +10,11 @@
                         $penulis = $_POST['penulis'];
                         $penerbit = $_POST['penerbit'];
                         $tahun_terbit = $_POST['tahun_terbit'];
+                        if ($tahun_terbit > 2024) {
+                            echo "Tahun terbit tidak boleh lebih dari 2024.";
+                        } else {
+                            echo "Tahun valid.";
+                        }
                         $isbn = $_POST['isbn'];
                         $sinopsis = $_POST['sinopsis'];
 
@@ -93,7 +98,7 @@
                 <div class="row mb-3">
                 <div class="col-md-2">Tahun Terbit</div>
                     <div class="col-md-8">
-                        <input type="number"  class="form-control" name="tahun_terbit">
+                        <input type="number"  class="form-control" name="tahun_terbit" max="2024">
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -124,7 +129,7 @@
     </div>
 </div>
 
-<style setup>
+<style>
     .card{
         background-color: #dff9fb;
     }

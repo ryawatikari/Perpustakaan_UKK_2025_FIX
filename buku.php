@@ -1,4 +1,5 @@
-<h1 class="m-4">Buku</h1>
+<title>Buku</title>
+<h1 class="m-4">Temukan buku favoritmu</h1>
 <div class="mt-5">
     <div class="card-body m-4">
         <!-- Pencarian Buku -->

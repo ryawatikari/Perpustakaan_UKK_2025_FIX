@@ -1,4 +1,3 @@
-
 <h1 class="mt-4 text-start">Laporan Pengembalian Buku</h1>
 <div class="row">
 <div class="info mt-5">
@@ -98,7 +97,7 @@
         </table>
     </div>
 </div>
-<style setup>
+<style>
     h1{
         font-family: "Roboto", serif;
         font-optical-sizing: auto;

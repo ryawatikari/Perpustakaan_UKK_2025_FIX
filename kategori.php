@@ -1,3 +1,4 @@
+<title>Kategori</title>
 <h1 class="mt-4">Kategori Buku</h1>
 <div class="">
     <div class="card-body">
@@ -36,6 +37,3 @@
     </div>
 </div>
 
-<style setup>
- 
-</style>

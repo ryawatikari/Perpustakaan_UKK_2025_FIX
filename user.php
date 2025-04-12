@@ -1,4 +1,4 @@
-
+<title>User</title>
 <h1 class="mt-4">User Management</h1>
 <div class="">
     <div class="card-body">
@@ -23,7 +23,7 @@
                          <tbody>
                             <!-- belum tambahkan level user -->
                                 <td class="text-center"><?php echo $i++; ?></td>
-                                <td><?php echo $data['username']; ?></td>
+                                <td><?php echo $data['nama']; ?></td>
                                 <td><?php echo $data['email']; ?></td>
                                 <td><?php echo $data['alamat']; ?></td>
                                 <td><?php echo $data['no_telpon']; ?></td>
@@ -42,7 +42,3 @@
         </div>
     </div>
 </div>
-
-<style setup>
- 
-</style>

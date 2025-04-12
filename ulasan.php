@@ -49,7 +49,7 @@
         </div>
     </div>  
 </div>
-<style setup>
+<style>
   
   tbody:hover {
     background-color:#dfe6e9; 

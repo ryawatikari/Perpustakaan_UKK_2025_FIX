@@ -107,7 +107,7 @@
                                         <a class="nav-link font-weight__500 text-white" href="#contact">Kontak Kami</a>
                                     </li>
                                 </ul>
-                                <a class="btn btn-shadow btn-rounded btn-primary base-plus-font-size my-0 btn-md" href="login.php" role="button">Masuk</a>
+                                <!-- <a class="btn btn-shadow btn-rounded btn-primary base-plus-font-size my-0 btn-md" href="login.php" role="button">Masuk</a> -->
                                
                             </div>
                         </div>

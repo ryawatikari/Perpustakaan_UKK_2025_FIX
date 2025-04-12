@@ -1,6 +1,6 @@
-
+<title>Peminjaman</title>
 <!-- tes commit otomatis -->
-<h1 class="mt-4">Laporan Peminjaman</h1>
+<h1 class="mt-5">Laporan Peminjaman Buku</h1>
 <div class="row">
 <div class="info mt-5">
         <?php
@@ -27,23 +27,29 @@
                 <th>Aksi</th>
             </tr> 
         </thead>           
-            <?php
-                $i=1;
-                if ($_SESSION['user']['level'] == 'peminjam'){
-                    $query = mysqli_query($koneksi, "SELECT * FROM peminjaman JOIN user on
-                    user.id_user=peminjaman.id_user JOIN buku ON buku.id_buku=peminjaman.id_buku where peminjaman.id_user=".$_SESSION['user']['id_user']);
-                } else {
-                    $query = mysqli_query($koneksi, "SELECT * FROM peminjaman JOIN user on
-                    user.id_user=peminjaman.id_user JOIN buku ON buku.id_buku=peminjaman.id_buku");
-                }
-                while ($data = mysqli_fetch_array($query)) :
+        <?php
+            $i = 1;
+            if ($_SESSION['user']['level'] == 'peminjam') {
+                $query = mysqli_query($koneksi, "SELECT * FROM peminjaman 
+                    JOIN user ON user.id_user = peminjaman.id_user 
+                    JOIN buku ON buku.id_buku = peminjaman.id_buku 
+                    WHERE peminjaman.id_user = ".$_SESSION['user']['id_user']);
+            } else {
+                $query = mysqli_query($koneksi, "SELECT * FROM peminjaman 
+                    JOIN user ON user.id_user = peminjaman.id_user 
+                    JOIN buku ON buku.id_buku = peminjaman.id_buku 
+                    ");
+            }
+
+            while ($data = mysqli_fetch_array($query)) :
             ?>
+
             <tbody class="text-start">
             <tr>
                 <td><?= $data['nama'] ?></td>
                 <td><?= $data['judul']; ?></td> 
-                <td><?= $data['penerbit']; ?></td> 
                 <td><?= $data['penulis']; ?></td> 
+                <td><?= $data['penerbit']; ?></td> 
                 <td><?= $data['tanggal_peminjaman']; ?></td> 
                 <td><?= $data['tanggal_pengembalian']; ?></td> 
                 <td>
@@ -54,23 +60,36 @@
                     ?>
                 </td>  
                 <td>
-                    <?php
-                        // Menentukan denda jika pengembalian melebihi jatuh tempo
-                        $tanggal_pengembalian = $data['tanggal_pengembalian'];
-                        $jatuh_tempo = strtotime($tanggal_jatuh_tempo);
-                        $tanggal_kembali = strtotime($tanggal_pengembalian);
+                <?php
+                    $tanggal_pengembalian = $data['tanggal_pengembalian'];
+                    $tanggal_pinjam = $data['tanggal_peminjaman'];
+                    $tanggal_jatuh_tempo = date('Y-m-d', strtotime($tanggal_pinjam . ' + 5 days'));
 
-                        $denda = 0;
-                        if ($tanggal_kembali > $jatuh_tempo) {
-                            $denda = ($tanggal_kembali - $jatuh_tempo) / (60 * 60 * 24) * 1000;
+                    $denda = 0;
+                    if (strtotime($tanggal_pengembalian) > strtotime($tanggal_jatuh_tempo)) {
+                        // Hitung jumlah hari keterlambatan (tanpa hari Minggu)
+                        $start = new DateTime($tanggal_jatuh_tempo);
+                        $end = new DateTime($tanggal_pengembalian);
+                        $interval = new DateInterval('P1D');
+                        $daterange = new DatePeriod($start, $interval, $end->modify('+1 day'));
+
+                        $jumlahHariKeterlambatan = 0;
+                        foreach ($daterange as $date) {
+                            if ($date->format('w') != 0) { // 0 adalah Minggu
+                                $jumlahHariKeterlambatan++;
+                            }
                         }
-                        echo number_format($denda, 0, ',', '.');
-                    ?>
+
+                        $denda = $jumlahHariKeterlambatan * 1000;
+                    }
+
+                    echo number_format($denda, 0, ',', '.');
+                ?>
                 </td> 
                 <td><?= $data['status_peminjaman']; ?></td> 
                 <td>
                     <?php if ($_SESSION['user']['level'] != 'peminjam') : ?>
-                        <a onclick="return confirm('Buku berhasil dikembalikan, lanjutkan?')" href="?page=pengembalian&id_peminjaman=<?= $data['id_peminjaman']?>" class="btn btn-success">
+                        <a onclick="return confirm('Apakah peminjam tidak dikenakan denda?')" href="?page=pengembalian&id_peminjaman=<?= $data['id_peminjaman']?>" class="btn btn-success">
                             <i class="fa-solid fa-arrow-right-arrow-left"></i>
                         </a>
                         <a href="?page=laporan_peminjaman_ubah&&id=<?= $data['id_peminjaman']?>" class="btn btn-warning">

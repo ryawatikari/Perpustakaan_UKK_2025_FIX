@@ -1,4 +1,4 @@
-<h1 class="mt-4">Peminjaman Buku</h1>
+<h1 class="mt-4">Pinjam Buku? Isi Dulu Datanya!</h1>
 <div class="card text-bg-light">
     <div class="card-body">
         <div class="row">

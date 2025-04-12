@@ -59,12 +59,20 @@ include "koneksi.php"
 											$alamat = $_POST['alamat'];
 											$no_telpon = $_POST['no_telpon'];
 
-                                            $insert = mysqli_query($koneksi, "INSERT INTO user (nama, username, email, password, alamat, no_telpon, level) VALUES ('$nama', '$username', '$email', '$password', '$alamat', '$no_telpon', 'peminjam')");
+											// email sudah terdaftar
+											$cek_email = mysqli_query($koneksi, "SELECT * FROM user WHERE email = '$email'");
+											// logic email yg sudah terdaftar
+											if (mysqli_num_rows($cek_email) > 0) {
+												echo "<script>alert('Email sudah terdaftar! Silahkan Gunakan Email Lain');</script>";	
+											} else {
+												$insert = mysqli_query($koneksi, "INSERT INTO user (nama, username, email, password, alamat, no_telpon, level) VALUES ('$nama', '$username', '$email', '$password', '$alamat', '$no_telpon', 'peminjam')");
 											if ($insert){
 												echo "<script>alert('Registrasi Berhasil! Silahkan Login'); window.location='login.php';</script>";
 											} else {
 												echo "<script>alert('Registrasi Gagal!');</script>";
 											} 
+											}
+                                            
 										} else {
 											echo "<script>alert('Silahkan isi form registrasi');</script>";
                                         }

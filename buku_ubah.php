@@ -1,4 +1,4 @@
-<h1 class="mt-4">Buku</h1>
+<h1 class="mt-5">Ubah Data Buku</h1>
 <div class="card text-bg-light">
     <div class="card-body">
         <div class="row">

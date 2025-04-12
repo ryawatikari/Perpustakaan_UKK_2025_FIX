@@ -1,4 +1,4 @@
-<h2 align="center">Laporan Peminjman</h2>
+<h2 align="center">Cetak</h2>
 <table border="1" cellspacing="0" cellpading="5" width="100%">
                         <colgroup> 
                             <col style="width: 4%;" /> 

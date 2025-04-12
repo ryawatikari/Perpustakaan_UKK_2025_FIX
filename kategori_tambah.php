@@ -1,4 +1,4 @@
-<h1 class="mt-4">Kategori Buku</h1>
+<h1 class="mt-5">Tambah Data Kategori</h1>
 <div class="card">
     <div class="card-body">
         <div class="row">
