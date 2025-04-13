@@ -43,6 +43,9 @@
                                     </div>
                                 </div>
                             </div>
+                            <?php if ($_SESSION['user']['level']== 'admin'):
+                                
+                                ?>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-danger text-white mb-4">
                                     <div class="card-body">
@@ -56,6 +59,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <?php endif;?>
                         </div>
 
                         <div class="card">

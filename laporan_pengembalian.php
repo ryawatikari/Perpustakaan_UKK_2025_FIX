@@ -81,7 +81,7 @@
                 <td><?= $data['status_peminjaman']; ?></td> 
                 <td>
                     <!-- <a onclick="return confirm('Apakah denda sudah lunas?')" href="?page=pengembalian&id_peminjaman=<?= $data['id_peminjaman']?>" class="btn btn-success">Dikembalikan</a> -->
-                    <a href="?page=laporan_peminjaman_ubah&&id=<?= $data['id_peminjaman']?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a href="?page=laporan_peminjaman_ubah&&id=<?= $data['id_peminjaman']?>" class="btn btn-warning mb-0 mb-sm-1"><i class="fa-solid fa-pen-to-square"></i></a>
                     <a onclick="return confirm('Apakah anda yakin menghapus data ini')" href="?page=laporan_pengembalian_hapus&&id=<?= $data['id_peminjaman']?>" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></a>
                 </td>
             </tr>

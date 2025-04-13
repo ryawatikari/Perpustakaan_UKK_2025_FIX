@@ -89,10 +89,10 @@
                 <td><?= $data['status_peminjaman']; ?></td> 
                 <td>
                     <?php if ($_SESSION['user']['level'] != 'peminjam') : ?>
-                        <a onclick="return confirm('Apakah peminjam tidak dikenakan denda?')" href="?page=pengembalian&id_peminjaman=<?= $data['id_peminjaman']?>" class="btn btn-success">
+                        <a onclick="return confirm('Apakah peminjam tidak dikenakan denda?')" href="?page=pengembalian&id_peminjaman=<?= $data['id_peminjaman']?>" class="btn btn-success mb-0 mb-sm-1">
                             <i class="fa-solid fa-arrow-right-arrow-left"></i>
                         </a>
-                        <a href="?page=laporan_peminjaman_ubah&&id=<?= $data['id_peminjaman']?>" class="btn btn-warning">
+                        <a href="?page=laporan_peminjaman_ubah&&id=<?= $data['id_peminjaman']?>" class="btn btn-warning mb-0 mb-sm-1">
                             <i class="fa-solid fa-pen-to-square"></i>
                         </a>
                     <?php endif; ?>

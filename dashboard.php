@@ -64,11 +64,19 @@ if (!isset($_SESSION['user'])){
                             </a>
                             <div class="sb-sidenav-menu-heading">NAVIGASI</div>
                             <!-- pembagian hak akses -->
-                        
+            
                             <a class="nav-link" href="?page=buku">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
                                 Buku
                             </a>
+                            <?php
+                        if ($_SESSION['user']['level'] == 'admin') :
+                            ?>
+                            <a class="nav-link" href="?page=kategori">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                    Kategori
+                            </a>
+                        <?php endif; ?>
                             <a class="nav-link" href="?page=laporan">
                                     <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                    Peminjaman
@@ -77,22 +85,9 @@ if (!isset($_SESSION['user'])){
                                     <div class="sb-nav-link-icon"><i class="fa-solid fa-arrow-right-arrow-left"></i></div>
                                     Pengembalian
                             </a>
-                            <!-- <?php
-                            if ($_SESSION['user']['level'] == 'peminjam') :
-                            ?>
-                            <?php endif; ?> -->
                             <?php
                             if ($_SESSION['user']['level'] == 'admin') :
                             ?>
-                            <!-- <a class="nav-link" href="?page=laporan_pengembalian">
-                                    <div class="sb-nav-link-icon"><i class="fa-solid fa-arrow-right-arrow-left"></i></div>
-                                    Pengembalian
-                            </a> -->
-                            
-                            <a class="nav-link" href="?page=kategori">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Kategori
-                            </a>
                             <a class="nav-link" href="?page=user">
                                     <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                     User
@@ -176,12 +171,14 @@ if (!isset($_SESSION['user'])){
     .fw-semibold{
         color: #4b6584;
     }
+
     .nav-link{
         color:rgb(44, 99, 120) !important;
         font-weight: 500;
     }
     .nav-link:hover{
         color: #747d8c !important;
+        
     }
     .bg-subtle{
         background-color:rgb(229, 242, 249);

@@ -9,36 +9,36 @@
                     $id_buku = $_POST['id_buku'];
                     $id_user = $_POST['id_user'];
                     
-                    $tanggal_sekarang = date("Y-m-d");
-                    $tanggal_jatuh_tempo = date('Y-m-d', strtotime("+5 days"));
+                    $cek_user = mysqli_query($koneksi, "SELECT * FROM user WHERE id_user='$id_user'");
+                    if (mysqli_num_rows($cek_user) == 0){
+                        echo '<script>alert("Peminjam tidak ditemukan. Pastikan kamu memilih dari daftar!");</script>';
+                    } else {
+                        $tanggal_sekarang = date("Y-m-d");
+                        $tanggal_jatuh_tempo = date('Y-m-d', strtotime("+5 days"));
 
-                    // Cek jumlah buku yang sedang dipinjam oleh user
-                    $cek_peminjaman = mysqli_query($koneksi, "SELECT COUNT(*) as total FROM peminjaman WHERE id_user='$id_user' AND status_peminjaman='dipinjam'");
-                    $data = mysqli_fetch_assoc($cek_peminjaman);
-                    $jumlah_peminjaman = $data['total'];
+                        $cek_peminjaman = mysqli_query($koneksi, "SELECT COUNT(*) as total FROM peminjaman WHERE id_user='$id_user' AND status_peminjaman='dipinjam'");
+                        $data = mysqli_fetch_assoc($cek_peminjaman);
+                        $jumlah_peminjaman = $data['total'];
 
-                    // Cek apakah user sudah meminjam buku dengan ID yang sama dan belum dikembalikan
-                    $cek_buku_sama = mysqli_query($koneksi, "SELECT * FROM peminjaman WHERE id_user='$id_user' AND id_buku='$id_buku' AND status_peminjaman='dipinjam'");
+                        $cek_buku_sama = mysqli_query($koneksi, "SELECT * FROM peminjaman WHERE id_user='$id_user' AND id_buku='$id_buku' AND status_peminjaman='dipinjam'");
 
-                    // Jika buku sudah dipinjam, maka tidak bisa meminjam lagi
-                    if (mysqli_num_rows($cek_buku_sama) > 0){
-                        echo '<script>alert("Kamu sudah meminjam buku ini."); window.location.href = "?page=laporan"</script>';
-                    }else{
-                        // Admin boleh meminjam tanpa batas
-                        if ($id_user === 'admin' || $jumlah_peminjaman < 2) {
-                            $query = mysqli_query($koneksi, "INSERT INTO peminjaman(id_buku, id_user, tanggal_peminjaman, tanggal_jatuh_tempo, status_peminjaman) 
-                                                            VALUES('$id_buku', '$id_user', '$tanggal_sekarang', '$tanggal_jatuh_tempo', 'dipinjam')");
-    
-                            if ($query) {
-                                echo '<script>alert("Peminjaman Berhasil."); window.location.href = "?page=laporan";</script>';
-                            } else {
-                                echo '<script>alert("Peminjaman Gagal."); window.location.href = "?page=laporan"</script>';
-                            }
+                        if (mysqli_num_rows($cek_buku_sama) > 0){
+                            echo '<script>alert("Kamu sudah meminjam buku ini."); window.location.href = "?page=laporan"</script>';
                         } else {
-                            echo '<script>alert("User sudah mencapai batas maksimal peminjaman (2 buku).");</script>';
+                            if ($id_user === 'admin' || $jumlah_peminjaman < 2) {
+                                $query = mysqli_query($koneksi, "INSERT INTO peminjaman(id_buku, id_user, tanggal_peminjaman, tanggal_jatuh_tempo, status_peminjaman) 
+                                                                VALUES('$id_buku', '$id_user', '$tanggal_sekarang', '$tanggal_jatuh_tempo', 'dipinjam')");
+                                if ($query) {
+                                    echo '<script>alert("Peminjaman Berhasil."); window.location.href = "?page=laporan";</script>';
+                                } else {
+                                    echo '<script>alert("Peminjaman Gagal."); window.location.href = "?page=laporan"</script>';
+                                }
+                            } else {
+                                echo '<script>alert("User sudah mencapai batas maksimal peminjaman (2 buku).");</script>';
+                            }
                         }
                     }
-                }
+                }              
                 ?>
 
                 <div class="row">
@@ -49,7 +49,7 @@
                             <div class="col-md-8">
                             <input type="text" id="cariPeminjam" class="form-control" placeholder="Cari peminjam">
                             <div id="dropdownPeminjam" class="dropdown-menu"></div>
-                            <input type="hidden" id="id_user" name="id_user">
+                            <input type="hidden" id="id_user">
 
                             <script>
                                 document.getElementById('cariPeminjam').addEventListener('input', function () {
