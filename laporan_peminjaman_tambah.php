@@ -49,7 +49,7 @@
                             <div class="col-md-8">
                             <input type="text" id="cariPeminjam" class="form-control" placeholder="Cari peminjam">
                             <div id="dropdownPeminjam" class="dropdown-menu"></div>
-                            <input type="hidden" id="id_user">
+                            <input type="hidden" id="id_user" name="id_user">
 
                             <script>
                                 document.getElementById('cariPeminjam').addEventListener('input', function () {
