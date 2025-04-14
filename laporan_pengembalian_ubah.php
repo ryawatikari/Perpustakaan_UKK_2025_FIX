@@ -25,6 +25,7 @@
                     $query = mysqli_query($koneksi, "SELECT*FROM peminjaman WHERE id_peminjaman=$id");
                     $data = mysqli_fetch_array ($query);
                 ?>
+                
                 <div class="row mb-3">
                         <div class="col-md-2">Buku</div>
                         <div class="col-md-8">

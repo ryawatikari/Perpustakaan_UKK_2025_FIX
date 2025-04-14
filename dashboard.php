@@ -89,7 +89,7 @@ if (!isset($_SESSION['user'])){
                             if ($_SESSION['user']['level'] == 'admin') :
                             ?>
                             <a class="nav-link" href="?page=user">
-                                    <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                    <div class="sb-nav-link-icon"><i class="fa-solid fa-user"></i></div>
                                     User
                             </a>
                         

@@ -26,7 +26,7 @@
                 $i=1;
                 if ($_SESSION['user']['level'] == 'peminjam'){
                     $query = mysqli_query($koneksi, "SELECT * FROM peminjaman JOIN user on
-                    user.id_peminjaman=peminjaman.id_user 
+                    user.id_user=peminjaman.id_user 
                     JOIN buku ON buku.id_buku=peminjaman.id_buku
                     where peminjaman.id_user=".$_SESSION['user']['id_user']
                     ." AND status_peminjaman = 'dikembalikan'"
