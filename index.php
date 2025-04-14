@@ -125,7 +125,7 @@
             <div class="row justify-content-center justify-content-md-start h-100 align-items-center">
                 <div class="col-12 col-md-8 align-self-center">
                     <div class="hero-content">
-                        <h1 class="xxxl-font-size font-weight__700">Selamat datang di Perpustakaan Digital MAK Negeri Ende!</h1>
+                        <h1 class="xxxl-font-size font-weight__700">Selamat datang di Perpustakaan MAK Negeri Ende</h1>
                         <p class="lead mt-2">Temukan berbagai koleksi buku, jurnal, dan referensi pendidikan dengan mudah dan cepat.</p>
                         <a class="btn btn-rounded btn-outline-white base-plus-font-size my-4 btn-md mr-lg-3" href="login.php" role="button">Masuk ke Perpustakaan</a>
                         <a class="btn btn-shadow btn-rounded btn-primary base-plus-font-size my-4 btn-md" href="#" role="button">Jelajahi Koleksi</a>
