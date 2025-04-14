@@ -55,7 +55,7 @@
                 <td>
                     <?php
                         // Menentukan batas maksimal pengembalian (5 hari setelah peminjaman)
-                        $tanggal_jatuh_tempo = date('Y-m-d', strtotime($data['tanggal_peminjaman'] . ' + 5 days'));
+                        $tanggal_jatuh_tempo = date('Y-m-d', strtotime($data['tanggal_peminjaman'] . ' + 4 days'));
                         echo date('d-m-Y', strtotime($tanggal_jatuh_tempo));
                     ?>
                 </td>  
@@ -63,7 +63,7 @@
                 <?php
                     $tanggal_pengembalian = $data['tanggal_pengembalian'];
                     $tanggal_pinjam = $data['tanggal_peminjaman'];
-                    $tanggal_jatuh_tempo = date('Y-m-d', strtotime($tanggal_pinjam . ' + 5 days'));
+                    $tanggal_jatuh_tempo = date('Y-m-d', strtotime($tanggal_pinjam . ' + 4 days'));
 
                     $denda = 0;
                     if (strtotime($tanggal_pengembalian) > strtotime($tanggal_jatuh_tempo)) {
@@ -71,7 +71,7 @@
                         $start = new DateTime($tanggal_jatuh_tempo);
                         $end = new DateTime($tanggal_pengembalian);
                         $interval = new DateInterval('P1D');
-                        $daterange = new DatePeriod($start, $interval, $end->modify('+1 day'));
+                        $daterange = new DatePeriod($start, $interval, $end);
 
                         $jumlahHariKeterlambatan = 0;
                         foreach ($daterange as $date) {
